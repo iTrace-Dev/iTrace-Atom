@@ -1,0 +1,10 @@
+{
+  "menu": [
+    {
+      "label": "iTrace Atom",
+      "submenu": [
+        {"label": "Connect to iTrace Core", "command": "iTrace-atom:init"}
+      ]
+    }
+  ]
+}
