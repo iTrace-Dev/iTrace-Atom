@@ -1,16 +1,114 @@
 {
-  "name": "itrace-atom",
+  "name": "iTrace-atom",
   "main": "./lib/iTrace-atom",
   "version": "0.0.0",
-  "description": "A short description of your package",
+  "description": "",
   "keywords": [],
   "activationCommands": {
     "atom-workspace": "iTrace-atom:init"
   },
-  "repository": "https://github.com/atom/iTrace-atom",
+  "repository": "",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
+  },
+  "configSchema": {
+    "toggleOverwrite": {
+      "title": "Overwrite Existing Data",
+      "description": "Allow the plugin to overwrite token data if new gazes are found.",
+      "type": "boolean",
+      "default": false,
+      "order": 1
+    },
+    "toggleCleanup": {
+      "title": "Remove Database and Related files",
+      "description": "Allow the plugin to cleanup the database and intermediate logs after completion",
+      "type": "boolean",
+      "default": true,
+      "order": 2
+    },
+    "setdumpdirectory": {
+      "title": "Dump Directory",
+      "description": "The Directory where the atom plugin will dump before running iTrace.",
+      "type": "string",
+      "default": "some path/",
+      "order": 3
+    },
+    "setoutputdirectory": {
+      "title": "Output Directory",
+      "description": "The Directory where the output CSV is saved.",
+      "type": "string",
+      "default": "some path/",
+      "order": 4
+    },
+    "algorithm": {
+      "title": "Fixation Algorithm",
+      "description": "Choose the fixation algorithm you wish to apply to the gaze data.",
+      "type": "string",
+      "default": "BASIC",
+      "enum": [
+        "BASIC",
+        "IDT",
+        "IVT"
+      ],
+      "order": 5
+    },
+    "BASIC_window": {
+      "title": "Window size for BASIC filter",
+      "description": "The window size for the BASIC fixation filter.",
+      "type": "integer",
+      "default": 4,
+      "order": 6
+    },
+    "BASIC_radius": {
+      "title": "Radius size for BASIC filter",
+      "description": "The Radius size for the BASIC fixation filter.",
+      "type": "integer",
+      "default": 35,
+      "order": 7
+    },
+    "BASIC_peak": {
+      "title": "Peak size for BASIC filter",
+      "description": "The peak size for the BASIC fixation filter.",
+      "type": "integer",
+      "default": 40,
+      "order": 8
+    },
+    "IDT_durationwindow": {
+      "title": "Duration Window for IDT filter",
+      "description": "The window duration for the IDT fixation filter.",
+      "type": "integer",
+      "default": 10,
+      "order": 9
+    },
+    "IDT_dispersion": {
+      "title": "Dispersion for IDT filter",
+      "description": "The gaze dispersion for the IDT fixation filter.",
+      "type": "integer",
+      "default": 125,
+      "order": 10
+    },
+    "IVT_velocity": {
+      "title": "Velocity for IVT filter",
+      "description": "The velocity cap for the IVT fixation filter.",
+      "type": "integer",
+      "default": 50,
+      "order": 11
+    },
+    "IVT_duration": {
+      "title": "Duration for IVT filter",
+      "description": "The gaze duration for the IVT fixation filter (milliseconds).",
+      "type": "integer",
+      "default": 80,
+      "order": 12
+    },
+    "python_path": {
+      "title": "Python Executable Path",
+      "description": "The location of your python install (REQUIRED)",
+      "type": "string",
+      "default": "Not Set",
+      "order": 13
+    }
   },
   "dependencies": {
     "uuid": "^3.4.0",
@@ -19,11 +117,19 @@
     "xmlserializer": "^0.6.1"
   },
   "devDependencies": {
+    "electron": "^10.1.5",
     "eslint": "^6.7.2",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-config-prettier": "^6.7.0",
     "eslint-plugin-import": "^2.19.1",
     "eslint-plugin-prettier": "^3.1.1",
     "prettier": "^1.19.1"
+  },
+  "consumedServices": {
+    "tool-bar": {
+      "versions": {
+        "^0 || ^1": "consumeToolBar"
+      }
+    }
   }
 }
