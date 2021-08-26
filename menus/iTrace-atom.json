@@ -1,9 +1,9 @@
 {
   "menu": [
     {
-      "label": "iTrace",
+      "label": "iTrace Atom",
       "submenu": [
-        {"label": "Connect to iTrace Core", "command": "iTrace-atom:init"}
+        {"label": "Init", "command": "iTrace-atom:init"}
       ]
     }
   ]
