@@ -1,13 +1,10 @@
 {
   "name": "itrace-atom",
   "main": "./lib/iTrace-atom",
-  "version": "0.0.0",
-  "description": "A short description of your package",
+  "version": "0.1.0",
+  "description": "iTrace plugin for Atom",
   "keywords": [],
-  "activationCommands": {
-    "atom-workspace": "iTrace-atom:init"
-  },
-  "repository": "https://github.com/atom/iTrace-atom",
+  "repository": "https://github.com/devjeetr/itrace-atom",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
@@ -19,6 +16,7 @@
     "xmlserializer": "^0.6.1"
   },
   "devDependencies": {
+    "electron": "^10.1.5",
     "eslint": "^6.7.2",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-config-prettier": "^6.7.0",
