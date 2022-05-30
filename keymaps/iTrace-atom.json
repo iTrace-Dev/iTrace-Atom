@@ -1,5 +1,5 @@
 {
   "atom-workspace": {
-    "ctrl-alt-o": "iTrace-atom:init"
+    "ctrl-alt-o": "iTrace-atom:connect"
   }
 }
