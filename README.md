@@ -12,7 +12,7 @@ iTrace Atom is a plugin for the [Atom](https://atom.io/) text editor. The plugin
 Example command:
 `cd ./path_to_clone/iTrace-atom`
 
-4. Run the command 'apm link' in a terminal
+4. Run the command `apm link` in a terminal. This sets the current folder as a plugin folder for Atom.
 
 5. Run the command `npm install` to install required dependencies
 
