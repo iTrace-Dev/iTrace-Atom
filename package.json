@@ -1,5 +1,5 @@
 {
-  "name": "iTrace-Atom",
+  "name": "iTrace-Atom-v0.2.0",
   "main": "./lib/iTrace-atom",
   "version": "0.2.0",
   "description": "A short description of your package",
